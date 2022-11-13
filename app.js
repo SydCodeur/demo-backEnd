@@ -2,7 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
+const apiUrlPrefix = '/api/v1';
 const profileRoutes = require('./routes/profile');
+const userRoutes = require('./routes/user');
 
 const app = express();
 
@@ -15,7 +17,8 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api/v1', profileRoutes);
+app.use(apiUrlPrefix, profileRoutes);
+app.use(apiUrlPrefix, userRoutes);
 
 
 mongoose.connect("mongodb+srv://demo:" + process.env.DATABASE_PASSWORD + "@cluster0.d9pj9.mongodb.net/demo-db?retryWrites=true&w=majority",

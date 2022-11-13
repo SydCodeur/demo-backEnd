@@ -3,6 +3,7 @@ const profileSchema = mongoose.Schema(
     {
         name: { type: String },
         description: { type: String },
+        state: { type: Boolean }
     },
     {
         timestamps: true
