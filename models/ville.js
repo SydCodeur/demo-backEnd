@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const quartierSchema = mongoose.Schema(
+const villeSchema = mongoose.Schema(
     {
         name: { type: String },
         description: { type: String },
@@ -9,4 +9,4 @@ const quartierSchema = mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model('Quartier', quartierSchema);
+module.exports = mongoose.model('Ville', villeSchema);

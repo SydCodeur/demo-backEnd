@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 
 const profileRoutes = require('./routes/profile');
 const quartierRoutes = require('./routes/quartier');
+const villeRoutes = require('./routes/ville');
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use((req, res, next) => {
 
 app.use('/api/v1', profileRoutes);
 app.use('/api/v1', quartierRoutes);
+app.use('/api/v1', villeRoutes);
 
 
 mongoose.connect("mongodb+srv://demo:" + process.env.DATABASE_PASSWORD + "@cluster0.d9pj9.mongodb.net/demo-db?retryWrites=true&w=majority",
