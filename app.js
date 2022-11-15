@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 
 const apiUrlPrefix = '/api/v1';
 const profileRoutes = require('./routes/profile');
+const quartierRoutes = require('./routes/quartier');
+const villeRoutes = require('./routes/ville');
 const userRoutes = require('./routes/user');
 const categoryRoutes = require('./routes/category');
 const productRoutes = require('./routes/product');
@@ -19,6 +21,8 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(apiUrlPrefix, quartierRoutes);
+app.use(apiUrlPrefix, villeRoutes);
 app.use(apiUrlPrefix, profileRoutes);
 app.use(apiUrlPrefix, userRoutes);
 app.use(apiUrlPrefix, categoryRoutes);
