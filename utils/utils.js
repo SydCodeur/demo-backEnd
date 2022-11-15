@@ -1,0 +1,1 @@
+exports.printError = (functionName, errorMessage) => console.log(`Error in ${functionName} FUNCTION : ${errorMessage}`);
